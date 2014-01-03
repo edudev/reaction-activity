@@ -1,5 +1,6 @@
 define(function (require) {
     var activity = require("sugar-web/activity/activity");
+    var togetherjs = require("https://togetherjs.com/togetherjs-min.js")
 
     // Manipulate the DOM only when it is ready.
     require(['domReady!'], function (doc) {
@@ -7,6 +8,11 @@ define(function (require) {
         // Initialize the activity.
         activity.setup();
 
+        tjsbutton = document.getElementById('tgjsb')
+        tjsbutton.onclick = function() {
+            TogetherJS(this);
+            return false;
+        }
         init();
     });
 
